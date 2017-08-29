@@ -24,3 +24,6 @@ roslaunch_add_file_check(launch)
 
 add_executable(ball_base_frame_publisher test/ball_base_frame_publisher.cpp )
 target_link_libraries(ball_base_frame_publisher ${catkin_LIBRARIES})
+
+add_executable(ball_traje_recorder test/ball_traje_recorder.cpp )
+target_link_libraries(ball_traje_recorder ${catkin_LIBRARIES})
