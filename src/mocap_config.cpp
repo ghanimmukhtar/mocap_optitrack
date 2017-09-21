@@ -75,10 +75,13 @@ PublishedRigidBody::PublishedRigidBody(XmlRpc::XmlRpcValue &config_node)
 
     if(publish_point){
         ROS_WARN_STREAM("I am creating the point publisher cause it is: " << publish_point);
+
         point_topic = (std::string&) config_node[POINT_TOPIC_PARAM_NAME];
         stamped_transform_topic = (std::string&) config_node[STAMPED_TRANSFORM_TOPIC_PARAM_NAME];
         point_pub = n.advertise<geometry_msgs::PointStamped>(point_topic, 1000);
         stamped_transform_pub = n.advertise<geometry_msgs::TransformStamped>(stamped_transform_topic, 1000);
+        ROS_WARN_STREAM("The point topic name is: " << point_topic);
+        ROS_WARN_STREAM("The other topic name is: " << stamped_transform_topic);
     }
 
     if (publish_pose2d)
@@ -121,6 +124,8 @@ void PublishedRigidBody::publish(RigidBody &body)
     }
 
 //    ROS_INFO_STREAM("size of free marker vector is: " << _free_marker_positions.size());
+//    ROS_INFO_STREAM("publish point boolean is: " << publish_point);
+//    ROS_WARN("*******************************");
     if(publish_point && !_free_marker_positions.empty()){
         point.header.frame_id = parent_frame_id;
         point.point.x = _free_marker_positions[0][0];

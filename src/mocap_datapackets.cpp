@@ -132,7 +132,7 @@ void MoCapDataFormat::parse()
     read_and_seek(model.numOtherMarkers);
     model.otherMarkers = new Marker[model.numOtherMarkers];
     ROS_DEBUG("Number of markers not in sets: %d", model.numOtherMarkers);
-    //ROS_INFO_STREAM("Number of markers not in sets, i.e. free markers: " << model.numOtherMarkers);
+//    ROS_INFO_STREAM("Number of markers not in sets, i.e. free markers: " << model.numOtherMarkers);
 
     _free_markers_positions.clear();
     for (int l = 0; l < model.numOtherMarkers; l++)

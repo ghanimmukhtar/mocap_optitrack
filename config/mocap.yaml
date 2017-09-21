@@ -4,16 +4,15 @@
 #
 rigid_bodies:
     '1':
-        pose: optitrack/basket/pose
-        position: optitrack/ball/position
-        child_frame_id: optitrack/ball/base_link
+        pose: optitrack/calibrator/pose
+        position: optitrack/calibrator/position
+        child_frame_id: optitrack/calibrator/base_link
         parent_frame_id: optitrack_frame
         use_new_coordinates: false
     '2':
-        pose: robot/calibrator/pose
-        position: robot/calibrator/position
-        pose2d: robot/calibrator/ground_pose
-        child_frame_id: robot/calibrator/base_link
+        pose: optitrack/basket/pose
+        position: optitrack/ball/position
+        child_frame_id: optitrack/ball/base_link
         parent_frame_id: optitrack_frame
         use_new_coordinates: false
 optitrack_config:
